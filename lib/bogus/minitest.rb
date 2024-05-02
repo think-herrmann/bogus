@@ -1,7 +1,7 @@
 gem 'minitest', '>= 4.7'
 require 'bogus'
 
-module MiniTest::Assertions
+module Minitest::Assertions
   def assert_received(subject, method, args, message = nil)
     with_bogus_matcher_for(subject, method, args) do |matcher, result|
       assert(result, message || matcher.failure_message_for_should)
